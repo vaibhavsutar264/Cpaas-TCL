@@ -1,0 +1,12 @@
+{
+  "common": {
+    "home": "Home Screen",
+    "CpaasHeading": "CPAAS TCL",
+    "loginHeading": "Login",
+    "enterEmailAndPassword": "Enter email ID & password",
+    "email": "Enter your email ID",
+    "password": "Password",
+    "forgotPassword": "Forgot Password ?",
+    "loginBtn": "Login"
+  }
+}
