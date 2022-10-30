@@ -8,6 +8,7 @@ import {
 } from '../constants/userConstants'
 import { RootState } from '../store'
 import axios from "axios";
+import services from '../services'
 
 export const login =
   (
@@ -32,24 +33,27 @@ export const login =
       //     password,
       //   }),
       // })
+      const loginService = services.loginModuleService
+
+      const data:any = await loginService.create({ email, password })
       
-      const config = { headers: { "Content-Type": "application/json"} };
+      // const config = { headers: { "Content-Type": "application/json"} };
 
-        //this config file is required for post request
+      //   //this config file is required for post request
 
-        const { data } = await axios.post(
-            `/api/v1/login`,
-            { email, password },
-            config
-        )
+      //   const { data } = await axios.post(
+      //       `/api/v1/login`,
+      //       { email, password },
+      //       config
+      //   )
 
       // const data = await response.json()
-      const userData = { email: data.email, password: data.password }
+      const userData = { email: data.data.user.email, password: data.data.user.password }
       localStorage.setItem('userInfo', JSON.stringify(userData))
 
       dispatch({
         type: USER_LOGIN_SUCCESS,
-        payload: data,
+        payload: data.data.user.email
       })
 
       localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
