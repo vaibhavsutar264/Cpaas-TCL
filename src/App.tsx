@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import HomeScreen from "./components/Home/HomeScreen";
 import Login from "./components/login/login-screen/Login";
 import SetPassword from "./components/login/set-password/SetPassword";
-// import "./App.css";
 import "./i18n";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "./i18n";

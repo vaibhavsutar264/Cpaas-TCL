@@ -45,12 +45,12 @@ export const login =
 
       // const data = await response.json()
       const userData = { email: data.email, password: data.password }
+      localStorage.setItem('userInfo', JSON.stringify(userData))
 
       dispatch({
         type: USER_LOGIN_SUCCESS,
         payload: data,
       })
-      localStorage.setItem('userInfo', JSON.stringify(userData))
 
       localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
     } catch (error: any) {

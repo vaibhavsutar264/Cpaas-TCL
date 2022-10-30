@@ -17,4 +17,5 @@ i18n.use(initReactI18next)
     resources,
     defaultNS: "common",
     fallbackLng: "en",
+    lng: localStorage.lng,
   });

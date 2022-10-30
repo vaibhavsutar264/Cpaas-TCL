@@ -19,14 +19,6 @@ import "../login/login-screen/login.css"
 
 const HeaderForLogout = () => {
   const { i18n, t } = useTranslation();
-
-  useEffect(() => {
-    // if (localStorage?.getItem("i18nextLng")?.length > 2) {
-    // 	i18next?.changeLanguage("en");
-    // }
-    const lng = navigator.language;
-    i18next.changeLanguage(lng);
-  }, []);
   let navigate = useNavigate();
   const dispatch = useDispatch()
   const userLogin = useSelector<RootState, UserState>(
@@ -78,7 +70,7 @@ const HeaderForLogout = () => {
               id="floatingSelect" 
               aria-label="Floating label select example" 
               defaultValue={i18n.language}
-              onChange={(e) => i18n.changeLanguage(e.target.value)}>
+              onChange={(e) => {i18n.changeLanguage(e.target.value); localStorage.setItem("lng", e.target.value)}} >
             {availableLanguages.map((language) => (
                 <option key={language}>{language}</option>
               ))}

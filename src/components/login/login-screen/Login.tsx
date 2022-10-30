@@ -132,7 +132,6 @@ const Login = () => {
       <div className="login-area">
         <div className="container">
           <div className="row">
-          <StyledButton onClick={handleTheme}>Change Theme</StyledButton>
             <div className="col-xxl-8 col-xl-8 col-lg-7 col-md-6 col-sm-12 col-12"></div>
             <div className="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-12 col-12">
               <StyledWrapper className="login-form">
@@ -141,6 +140,7 @@ const Login = () => {
                   <p className="sub-title">{t<string>('enterEmailAndPassword')}</p>
                   <p className="sub-title making-color-red" id="making-color-red">{error && error}</p>
                 </div>
+          <StyledButton onClick={handleTheme}>Change Theme</StyledButton>
                 <form onSubmit={submitHandler} action="#" method="post">
                   <div className="input-group mb-3">
                     <span className="input-group-text icon" id="username">
